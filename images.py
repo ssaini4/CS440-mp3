@@ -1,10 +1,10 @@
 from operator import itemgetter, attrgetter                                                           
 
 class imageArray:
-    def __init__(self):
+    def __init__(self, fileNameTraining, fileNameTesting):
         #Turn into dictionary of the form (word category, list of words within that category)
-        file = open("trainingimages", 'r')
-        file2 = open("traininglabels", 'r')
+        file = open(fileNameTraining, 'r')
+        file2 = open(fileNameTesting, 'r')
         self.labelList = []
         self.imageList = []
         image = []

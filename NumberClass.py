@@ -24,10 +24,10 @@ class NumberClass:
         countValue = self.count
         return countValue
     
-    def getMAP(self):
-        self.MAP += log10(self.count)
+    def getMAP(self, number):
+        self.MAP += log10(float(self.count)/number)
         for row in range(28):
             for column in range(28):
-                temp = (getProbHash(row, column)+getProbPlus(row, column))/getCount()
-                self.MAP += log10(temp)
+                value = float(self.Feature[column+28*row])/self.count
+                self.MAP += log10(value)
         return self.MAP
